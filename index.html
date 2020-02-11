@@ -11,19 +11,11 @@
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
         <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
-        <a-assets>
-            <a-asset-item id="custom-model" src="https://raw.githubusercontent.com/lisatan16/projectkitty/master/SAMPLE.obj"></a-asset-item>
-        </a-assets>
-
         <a-marker type='barcode' value='1'>
-            <a-box position='0 0.5 0' color="yellow"></a-box>
-        </a-marker>
-
-        <a-marker type='barcode' value='2'>
-            <a-entity
-                obj-model="#custom-model"
-                scale="2">
-            </a-entity>
+            <a-entity 
+            obj-model=”obj: url(https://raw.githubusercontent.com/lisatan16/projectkitty/master/SAMPLE.obj); 
+            mtl: url(https://raw.githubusercontent.com/lisatan16/projectkitty/master/SAMPLE.mtl)”>
+        </a-entity>
         </a-marker>
 
         <!-- use this <a-entity camera> to support multiple-markers, otherwise use <a-marker-camera> instead of </a-marker> -->
